@@ -1,0 +1,33 @@
+body{
+	margin: 0;
+	padding: 0;
+	font-family:'sans-serif';
+	/*背景画像の設定/"このcssファイルから見た相対URL"とすることに注意*/
+	background-image: url("../othello5_img/background1.png");
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position: center 33px;
+}
+img{
+	vertical-align: bottom;
+}
+button{
+	/* 文字サイズを15pxに指定 */
+	font-size: 15px;
+	/* 縦方向に10px横方向に30pxの余白を指定 */
+	padding: 10px 20px;
+	/* 文字色を白色に指定 */
+	color: #fff;
+	/* ボーダーをなくす */
+	border-style: none;
+	/* 背景色を濃い緑色に指定 */
+	background-color: #006600;
+	/* 角丸の指定 */
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+button:hover{
+	/* 透明度を0%に指定 */
+	opacity: 1.0;
+}

@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Othello5</title>
+	<link rel="stylesheet" type="text/css" href="othello5_css/othello5_main.css">
+	<!--オセロの内部処理をするclassを定義したscriptを読み込む-->
+	<script src="othello5_js/othello5class.js"></script>
+  </head>
+  
+  <body>
+	<!--div要素はDOMを記述するscriptの上に持って来ることに注意-->
+	<div id="mainplace"></div><br>
+	<input type="button" value="Back" style='cursor:pointer;' onclick="undo()"/><br>
+	<input type="button" value="Reset" style='cursor:pointer;' onclick="reload()"/><br><br>
+	<div id="playercolor"></div>
+	<div id="turn"></div>
+	<div id="ratio"></div>
+	<div id="list"></div><br><br>
+	<div id="title">～Inner process～</div>
+	<div id="estimate"></div><br>
+	<div id="tree1"></div><br>
+	<div id="tree2"></div><br>
+	<div id="tree3"></div><br>
+	
+	<!--セレクトメニューでの選択を変数として得るためのscript-->
+	<script>
+		var players=window.localStorage.getItem("players");
+		var colorSelect=window.localStorage.getItem("color");
+		var firstAttack=window.localStorage.getItem("first");
+		//削除した方が良いと思うけど，そうするとリロードに非対応になる
+		//window.localStorage.removeItem("players");
+		//window.localStorage.removeItem("color");
+		//window.localStorage.removeItem("first");
+	</script>
+	
+	<!--セレクトメニューでの選択を反映して異なるファイルを読み込み実際のオセロの処理に入るためのscript-->
+	<script src="othello5_js/othello5playersdiverge.js"></script>
+  </body>
+</html>
+
+
+<!--
+残りやること
+・点滅＆タイムアウト処理の工夫
+・盤面表示画面の全体のレイアウト
+・chromeとfirefoxの見た目の違いを修正する
+
+・フェードはjQuery使わないやり方に挫折して止めた。
+　jQuery使ってブラックボックス化させたくないんだけど…イベントの削除とか仕様がよく分からなくなるし…
+・コマの反転のエフェクト←jQueryをかなりめんどくさいことしないとダメそう
+-->
